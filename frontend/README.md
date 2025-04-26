@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Weather Map Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 프로젝트는 네이버 지도 API와 기상청 날씨 데이터를 활용한 날씨 지도 웹 애플리케이션의 프론트엔드 부분입니다.
 
-## Available Scripts
+## 주요 기능
 
-In the project directory, you can run:
+- 네이버 지도 API를 활용한 지도 표시
+- 현재 위치 기반 날씨 정보 조회
+- 지도 클릭을 통한 위치별 날씨 정보 조회
+- 다양한 날씨 데이터 표시 (기온, 강수 확률, 바람, 습도)
+- 격자 좌표 변환 클라이언트 최적화 (캐싱 기능 포함)
 
-### `npm start`
+## 기술 스택
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React.js
+- Axios
+- Naver Maps API
+- CSS3 (애니메이션 및 반응형 디자인)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 설치 및 실행 방법
 
-### `npm test`
+1. 필요한 패키지 설치:
+   ```bash
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. 개발 모드로 실행:
+   ```bash
+   npm start
+   ```
+   애플리케이션은 [http://localhost:3002](http://localhost:3002)에서 실행됩니다.
 
-### `npm run build`
+3. 프로덕션 빌드:
+   ```bash
+   npm run build
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 환경 변수 설정
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+프로젝트 루트에 `.env` 파일을 생성하고 다음 변수를 설정하세요:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+REACT_APP_NAVER_MAP_CLIENT_ID=네이버클라우드플랫폼_클라이언트ID
+PORT=3002
+```
 
-### `npm run eject`
+## 주요 컴포넌트
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **App.js**: 메인 애플리케이션 컴포넌트
+- **NavBar.js**: 네비게이션 바 및 날씨 상태 선택 UI
+- **WeatherMap.js**: 네이버 지도 및 날씨 오버레이 처리
+- **utils/gridUtil.js**: 위경도 좌표를 기상청 격자 좌표로 변환하는 유틸리티
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 성능 최적화
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 클라이언트 측 격자 좌표 변환으로 API 호출 감소
+- 동일 좌표 재사용을 위한 캐싱 메커니즘 구현
+- 비동기 지도 로딩 및 컴포넌트 최적화
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 주의사항
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 네이버 클라우드 플랫폼에서 Web Service URL 등록 시 localhost 대신 127.0.0.1 사용 필요
+  (예: http://127.0.0.1:3002)
