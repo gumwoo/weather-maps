@@ -28,7 +28,7 @@
    ```bash
    npm start
    ```
-   애플리케이션은 [http://localhost:3002](http://localhost:3002)에서 실행됩니다.
+   애플리케이션은 [http://localhost:3003](http://localhost:3003)에서 실행됩니다.
 
 3. 프로덕션 빌드:
    ```bash
@@ -41,7 +41,7 @@
 
 ```
 REACT_APP_NAVER_MAP_CLIENT_ID=네이버클라우드플랫폼_클라이언트ID
-PORT=3002
+PORT=3003
 ```
 
 ## 주요 컴포넌트
@@ -60,4 +60,4 @@ PORT=3002
 ## 주의사항
 
 - 네이버 클라우드 플랫폼에서 Web Service URL 등록 시 localhost 대신 127.0.0.1 사용 필요
-  (예: http://127.0.0.1:3002)
+  (예: http://127.0.0.1:3003)
