@@ -1,0 +1,110 @@
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2196f3;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-logo:hover {
+  color: #0d47a1;
+}
+
+.nav-items {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.nav-item:hover {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+
+.nav-item.active {
+  background-color: rgba(33, 150, 243, 0.2);
+  border-bottom: 3px solid #2196f3;
+}
+
+.nav-item i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: #2196f3;
+}
+
+.nav-item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item-title {
+  font-size: 0.8rem;
+  color: #757575;
+}
+
+.nav-item-value {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #212121;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .navbar-container {
+    flex-direction: column;
+  }
+  
+  .nav-items {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .nav-item {
+    padding: 0.5rem;
+  }
+  
+  .nav-item i {
+    font-size: 1rem;
+    margin-right: 0.3rem;
+  }
+  
+  .nav-item-title {
+    font-size: 0.7rem;
+  }
+  
+  .nav-item-value {
+    font-size: 0.9rem;
+  }
+}
